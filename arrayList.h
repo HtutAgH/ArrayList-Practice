@@ -29,7 +29,7 @@ public:
     void clearList();
     
     arrayList(const arrayList&) = delete;
-    arrayList& operator=(const arrayList&) = delete;
+    arrayList& operator=(const arrayList& other);
 };
 
 #endif

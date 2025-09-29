@@ -35,7 +35,7 @@ bool arrayList::isItemAtEqual(int index, const complexNumber& item) const {
 void arrayList::insertAt(int index, const complexNumber& item) {
     if (index < 0 || index > length) throw std::out_of_range("index out of range");
     if (isFull()) throw std::overflow_error("list is full");
-    // shift right [index..length-1]
+    // shift right
     for (int i = length; i > index; --i) {
         data[i] = data[i - 1];
     }
@@ -50,7 +50,7 @@ void arrayList::insertEnd(const complexNumber& item) {
 
 void arrayList::removeAt(int index) {
     if (index < 0 || index >= length) throw std::out_of_range("index out of range");
-    // shift left [index+1..length-1]
+    // shift left
     for (int i = index; i < length - 1; ++i) {
         data[i] = data[i + 1];
     }
@@ -70,4 +70,18 @@ void arrayList::replaceAt(int index, const complexNumber& item) {
 void arrayList::clearList() {
     // no need to delete[]; we keep capacity and reuse the buffer
     length = 0;
+}
+
+// arrayList.cpp
+arrayList& arrayList::operator=(const arrayList& other) {
+    if (this == &other) return *this;             
+
+    complexNumber* newData = new complexNumber[other.capacity];
+    for (int i = 0; i < other.length; ++i) newData[i] = other.data[i];
+
+    delete[] data;
+    data = newData;
+    capacity = other.capacity;
+    length   = other.length;
+    return *this;
 }
