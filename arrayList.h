@@ -21,6 +21,13 @@ public:
     void print() const;
     bool isItemAtEqual(int index, const complexNumber& item) const;
     
+    void insertAt(int index, const complexNumber& item);
+    void insertEnd(const complexNumber& item);
+    void removeAt(int index);
+    complexNumber retrieveAt(int index) const;
+    void replaceAt(int index, const complexNumber& item);
+    void clearList();
+    
     arrayList(const arrayList&) = delete;
     arrayList& operator=(const arrayList&) = delete;
 };
