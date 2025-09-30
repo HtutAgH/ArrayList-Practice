@@ -1,5 +1,0 @@
-Citations
-
-https://stackoverflow.com/questions/65071233/how-do-i-return-another-object-with-operator-overloading
-https://www.geeksforgeeks.org/cpp/how-to-insert-an-element-at-a-specific-position-in-an-array-in-c/
-https://www.w3schools.com/cpp/cpp_arrays.asp
